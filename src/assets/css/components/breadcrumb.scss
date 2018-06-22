@@ -1,0 +1,45 @@
+.breadcrumb {
+    font-family: 'Open sans';
+
+    @include respond-to(mobile) {
+        padding: 0px 15px;
+    }
+
+    .breadcrumb__item {
+        color: $primary-color;
+        font-size: 12px;
+
+        a {
+            margin-right: 5px;
+
+            &:hover {
+                color: $secondary-color;
+            }
+        }
+    }
+
+    span {
+        &:not(:first-child) {
+            .breadcrumb__item {
+                a {
+                    margin-left: 5px;
+                }
+            }
+        }
+    }
+
+    .ant-breadcrumb-separator {
+        font-size: 10px;
+        color: $primary-color;
+
+        margin: 0px 3px;
+    }
+
+    span {
+        &:last-child {
+            .breadcrumb__item {
+                color: #b1b2b4;
+            }
+        }
+    }
+}

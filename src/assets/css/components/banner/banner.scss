@@ -1,0 +1,19 @@
+.banner {
+    height: auto;
+    width: 100%;
+
+    position: relative;
+    float: left;
+
+    margin-bottom: 26px;
+    border-radius: 3px;
+
+    img {
+        height: auto;
+        width: 100%;
+    }
+
+    @include respond-to(mobile) { 
+        display: none;
+    }    
+}

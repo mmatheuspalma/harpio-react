@@ -1,0 +1,339 @@
+.container_product_view__fake{
+    @include w-h(100,300,%);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 300px;
+    border-radius: $border-box;
+    background-color: $default-color;
+
+    @include respond-to(mobile){
+        flex-direction: column;
+        height: auto;
+        padding: 30px 0;
+    }
+
+    .carrosel_product{
+        flex: 1.2;
+        display: flex;
+        flex-direction: row;
+        @include w-h(auto,235,px);
+
+
+        @include respond-to(mobile){
+            height: 175px; 
+        }
+
+        .carroseul_vertical_product{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-flow: column nowrap;
+            flex-basis: auto;
+            .product_box_carrosel{
+                @include w-h(72,74,px);
+                border:1px solid $grey;
+                border-radius: 4px;
+                cursor: pointer;
+                .product_image{
+                    max-width: 100%;
+                }
+            }
+        }
+        .product_show_carrosel{
+            @include w-h($product_show_carrosel_width,auto,px);
+            margin: 0 32.5px;
+            flex-basis: 75%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            @extend %card-loading;
+
+            @include respond-to(mobile){
+                width: 155px;
+                height: 160px;
+            }
+
+            .product_show_image{
+                max-width: 65%;
+                height: auto;
+            }
+        }
+    }
+    .product_view{
+        flex: 3;
+        padding-right: 32.5px;
+    
+        @include respond-to(mobile){
+            padding:0;
+            width: 100%;
+            padding: 0 30px;
+        }
+
+        .product_title{
+            margin : 10px 9;
+
+            @include respond-to(mobile){
+
+            }
+
+            .title {
+                font-size: $font-size-title;
+                color: $color-title-product;
+                text-align: start;
+                font-family: 'Open Sans Semibold';
+                margin-bottom: 35px;
+                 @extend %card-loading;
+                 height: 50px;
+
+                  @include respond-to(mobile){
+                      font-size: 20px;
+                      margin: 0;
+                      line-height: 20px;
+                      margin-bottom: 8px;
+                  }
+
+            }
+        }
+        .product_box_details{
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+
+            @include respond-to(mobile){
+                flex-direction: column;
+                min-width: 100%;
+            }
+            
+            .product_box{
+                @include w-h(auto,75,px);
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                flex-flow: row nowrap;
+                
+                .product_box_view{
+
+                    @include w-h(auto,auto,%);
+
+                    @include respond-to(mobile){
+                        width: 100%;
+                    }
+
+                    .title_product{
+
+                        margin: 0;
+                        color: $font-color-product;
+                        font-size: $font-size-box-product;
+
+                    }
+
+                    .price_product {
+                        margin: 0;
+                        font-size: $font-size-box-price-product;
+                        color: $secondary-color;
+                        font-family: 'Open Sans Bold';
+
+                    }
+                }
+          
+                &.product_price{
+
+                    flex:1;
+                    border-top-left-radius: $border-box;
+                    border-bottom-left-radius: $border-box;
+                    border-left : 1px solid $grey;
+                    border-top:  1px solid $grey;
+                    border-bottom: 1px solid $grey;
+
+                     .product_box_view{
+
+                            &:nth-child(2n){
+                                display: none;
+                            }
+
+                        }
+
+                }
+
+                &.product_vex{
+
+                    flex: 1;
+                    border-left : 1px solid $grey;
+                    border-top:  1px solid $grey;
+                    border-bottom: 1px solid $grey;
+
+                }
+
+                &.product_validation{
+                    flex: 2;
+                    border-top-right-radius: $border-box;
+                    border-bottom-right-radius: $border-box;
+                    border : 1px solid $grey;
+                    
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-end;
+                    
+                    .product_box_view{
+                        margin-right: 10px;
+                    }
+
+                    .product_button_disput{
+                        @include w-h(190,auto,px);
+                        padding: 10px;
+                        border-style: none;
+                        background-color: $background-bluedisput ;
+                        color: $color-buttondisput;
+                        font-family: 'Open Sans Bold';
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-evenly;
+                        @extend  %card-loading;
+                        margin-right: 10px;
+                        &:hover {
+                            background-color: darken($background-bluedisput, 5%);
+                            @extend  %card-loading;
+                        }
+                    }
+
+                }
+
+                @include respond-to(mobile){
+
+                    &.product_price{ 
+                        width: 100%;
+                        
+                        border : none;
+
+                        height: auto;
+
+                        .product_box_view{
+                            &:nth-child(2n){
+                                display: block;
+                                display: flex;
+                                flex-flow: column;
+                                align-items: flex-end;
+                                .ant-rate{
+                                   font-size: 13px;
+                                   .ant-rate-star{
+                                       margin: 0;
+                                       margin-left: 8px;
+                                   }
+                                }
+                            }
+                        }
+                        
+                    }
+
+                    &.product_validation{
+                        border : none;
+
+                        width: 100%;
+                        height: auto;
+
+                        .product_box_view{
+                            flex-basis: 50%;
+                            
+                            display: none;
+                            .ant-rate {
+                                font-size: 15px;
+                            }
+                        }
+
+                        .product_button_disput{
+                            width: 100%;
+                            margin:  10px 0;
+                        }
+                    }
+
+                    &.product_button_disput{
+                        border : none;
+                    }
+
+                }
+            }
+        }
+        .product_setings{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-flow: row nowrap;
+            margin-top: 20px;
+
+            @include respond-to(mobile){
+               flex-direction: column; 
+               height: 60px;
+               margin-top: 8px;
+            }
+
+            .setings_icons{
+                display: inline-flex;
+                align-items: center;
+                justify-content: flex-start;
+
+                @include respond-to(mobile){
+                    width: 100%;
+                    justify-content: space-evenly;
+                }
+
+                .icon_box{
+                    margin-right: 10px;
+                    @include w-h(auto,auto , px);
+                    display: flex;
+                    flex-flow: row nowrap;
+                    align-items: center;
+                    justify-content: flex-start;
+                    
+                    .icon{
+                       @include w-h(24,24,px);
+                       background-color: $primary-color;
+                       border-radius: 50px;
+                       display: flex;
+                       align-items: center;
+                       justify-content: center;
+                       font-size: 11px;
+                       cursor: pointer;
+                    }
+                    .icon_title{
+                        margin: 0;
+                        font-size: 13px;
+                        font-family: 'Open Sans Bold';
+                        margin-left: 8px;
+                        cursor: pointer;
+                    }
+                }
+            }
+            .setings_icons_social{
+                display: inline-flex;
+                flex-flow: row nowrap;
+                .icon_social{
+                    @include w-h(24,24,px);
+                    border-radius: 50px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color : $color-icon-social;
+                    font-size: 11px;
+                    margin-left: 7px;
+                    cursor: pointer;
+
+                    @extend %card-loading;
+                    
+                    @include respond-to(mobile){
+                        width: 24px;
+                        height: 24px;
+                    }
+
+                    &.facebook{
+                        
+                    }
+                    &.twitter{
+                    }
+                    &.google{
+                    }
+                }
+            }
+        }
+    }
+}

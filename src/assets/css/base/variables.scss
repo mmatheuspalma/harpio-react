@@ -1,0 +1,46 @@
+$header__height: 155px;
+$header__height__middle: 85px;
+$header__height_nav: 64px;
+
+$footer__height: 64px;
+
+$default-color: #ffffff;
+$primary-color: #323232;
+$secondary-color: #FFCD27;
+$tertiary-color: #eeeeee;
+
+@mixin w-h($w, $h, $type){
+  @if $w == auto {
+    width: $w;
+  } @else {
+    width: $w+$type;
+  }
+
+  @if $h == auto {
+      height: $h;
+  } @else {
+      height: $h+$type;
+  }
+}
+
+$breakpoints: (
+  desktop: 1220px,
+  tablet: 992px,
+  mobile: 765px,
+  small-phone : 320px
+);
+
+@mixin respond-to($breakpoint) { 
+  @if map-has-key($breakpoints, $breakpoint) {
+    
+    @media (max-width: #{map-get($breakpoints, $breakpoint)}) {
+      @content;
+    }
+
+  }
+}
+
+/*card view mobile - product and coupon*/
+
+$card-height : 290px;
+$card-height-small-phone : 270px;  

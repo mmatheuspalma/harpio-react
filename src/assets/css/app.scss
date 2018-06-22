@@ -1,0 +1,62 @@
+@import '~antd/dist/antd.css';
+
+@import 'base/variables';
+@import 'components/layout/header';
+@import 'components/layout/footer';
+
+@import 'components/comics/comics';
+
+@import 'components/breadcrumb';
+@import 'components/filterbar';
+@import 'components/banner/banner';
+@import 'components/404/404';
+@import 'components/blocktitle';
+@import 'components/modal';
+@import 'components/wrapper__comics';
+
+@import 'animations/background-horizontal-rotation';
+@import 'animations/card-loading';
+
+@import 'fonts/FontAwesome';
+@import 'fonts/OpenSans';
+
+body {
+    font-family: 'Open Sans';
+    background-color: #f1f1f1;
+}
+
+.layout__container {
+    display: block;
+    margin: 0px auto;
+
+    width: 100%;
+    max-width: 1185px;
+
+    @include respond-to(mobile) {
+        max-width: map-get($breakpoints, mobile);
+        min-width: 100px;
+    }
+}
+
+.layout__content {
+    background: transparent;
+    margin: 20px 0px;
+    height: auto;
+    min-height: 280px;
+
+    @include respond-to(mobile) {
+        margin: 0px;
+    }
+}
+
+.ant-layout {
+    background-color: #f1f1f1;
+}
+
+.ant-card {
+    font-family: 'Open Sans';
+}
+
+b {
+    font-family: 'Open Sans Bold';
+}

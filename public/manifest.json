@@ -1,0 +1,11 @@
+{
+  "short_name": "Harpio",
+  "name": "Harpio Comics",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "theme_color": "#a7cc00",
+  "background_color": "#011828",
+  "lang": "",
+  "orientation": "portrait",
+  "description": "Harpio Comics"
+}

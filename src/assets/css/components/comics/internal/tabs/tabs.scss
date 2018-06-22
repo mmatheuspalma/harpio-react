@@ -1,0 +1,106 @@
+@import "../internal.scss";
+
+.product__internal__tabs {
+    width: 100%;
+    float: left;
+    margin: 40px 0px;
+
+    @include respond-to(mobile){
+        margin: 5px 0px;
+    }
+    
+    .ant-tabs-bar {
+        margin: 0 0 30px 0;
+    }
+
+    .ant-tabs-ink-bar {
+        height: 3px;
+        background-color: $secondary-color;
+    }
+
+    .ant-tabs-nav  {
+        .ant-tabs-tab {
+            font-size: 18px;
+
+            &.ant-tabs-tab-active,
+            &:hover {
+                font-weight: 400;
+                color: $primary-color;
+            }
+        }
+    }
+
+    .product__internal__tab {
+        background-color: #ffffff;
+
+        box-sizing: border-box;
+        float: left;
+        width: 100%;
+
+        .product__internal__tab__title {
+            height: 57px;
+
+            display: flex;
+            align-items: center;
+            padding: 0px 30px;
+
+            border-bottom: 1px #f0f0f0 solid;
+
+            @include respond-to(mobile){
+                padding: 0px 20px;
+            }
+
+            h1 {
+                margin: 0px;
+                font-size: 17px;
+                font-weight: 400;
+                color: #9c9c9c;
+            }
+        }
+
+        .product__internal__tab__items {
+            margin: 0px 0px 30px 0px;   
+
+            .product__internal__tab__item {
+                display: flex;
+                justify-content: flex-start;
+                align-items: flex-start;
+                padding: 0px 30px;
+
+                height: auto;
+
+                &:nth-child(2n) {
+                    background-color: #f9f9f9;
+                }
+
+                @include respond-to(mobile){
+                    height: auto;
+                    align-items: flex-start;
+                    padding-left: 10px;
+                    padding-right: 10px;
+                }
+
+                .product__internal__tab__item__title {
+                    width: 230px;
+                    padding-right: 15px;
+
+                    @include respond-to(mobile){
+                        padding: 0 10px;
+                    }
+
+                    h3 {
+                        font-size: 14px;
+                        margin: 0px;
+                    }
+                    
+                }
+
+                .product__internal__tab__item__desc {
+                    p {
+                        margin: 0px;
+                    }
+                }
+            }
+        }
+    }
+}

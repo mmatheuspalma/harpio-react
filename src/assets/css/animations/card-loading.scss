@@ -1,0 +1,11 @@
+%card-loading {
+    background: linear-gradient(90deg, rgba(207, 216, 220, 0.2), rgba(207, 216, 220, 0.4), rgba(207, 216, 220, 0.2));
+    animation: card-loading 1.4s ease infinite;
+    background-size: 600% 600%;
+}
+
+@mixin card-loading{
+     background: linear-gradient(90deg, rgba(207, 216, 220, 0.2), rgba(207, 216, 220, 0.4), rgba(207, 216, 220, 0.2));
+    animation: card-loading 1.4s ease infinite;
+    background-size: 600% 600%;
+}

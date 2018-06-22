@@ -1,0 +1,336 @@
+.comic__item {
+    height: 250px;
+    padding: 0px 13px;
+
+    margin-bottom: 20px;
+
+    border-radius: 3px;
+    border: 1px #f0f0f0 solid;
+
+    @include respond-to(mobile) {
+        height: auto;
+    }
+
+    .comic__item__body {
+        height: 100%;      
+        
+        padding: 0px 13px;
+
+        @include respond-to(mobile){
+            padding: 0;
+            height: $card-height;
+        }
+
+        @include respond-to(small-phone){
+            height: $card-height-small-phone;
+        }
+
+        &.list {
+            height: 190px;
+
+            transition: none;
+
+            .comic__item__body__thumb {
+                width: 25%;
+                height: 100%;
+                float: left;
+
+                img {
+                    width: auto;
+                    height: 100%;
+                }
+            }
+
+            .comic__item__body__shop {
+                display: none;
+            }
+
+            .comic__item__body__rating,
+            .comic__item__body__title,
+            .comic__item__body__price,
+            .comic__item__body__actions {
+                width: 75%;
+                float: left;
+            }
+        }
+
+        &:not(.list) {
+            .ant-card-body {
+                display: flex;
+                justify-content: space-between;
+                flex-direction: column;
+            }
+        }
+        
+        .ant-card-body {
+            height: 100%;
+            padding: 25px 14px;
+
+            @include respond-to(mobile) {
+                height: 100%;
+                padding: 9px 12px;
+            }
+
+            .ant-card-loading-content {
+                height: 100%;
+                padding: 0px;              
+            }
+        }
+
+        .comic__item__body__thumb {
+            width: 100%;
+            margin-bottom: 10px;
+
+            img {
+                width: auto;
+                transition: none;
+                margin: 0px auto;
+                max-height: 130px;
+                display: block;
+            }
+
+            @include respond-to(mobile) {
+                max-height: 100px;
+                
+                img {
+                    width: auto;
+                    transition: none;
+                    margin: 0px auto;
+                    max-height: 100px;
+                    display: block;
+                }
+            }
+        }       
+
+        .comic__item__body__shop {
+            width: 100%;
+
+            display: flex;
+            justify-content: center;
+
+            margin: 10px 0px;
+
+            @include respond-to(mobile) {
+                margin: 0px;
+
+                a {
+                    img {
+                        height: 30px;
+                        margin: 0px;
+                    }
+                }
+            }
+
+        }
+
+        .comic__item__body__title {
+            h4 {
+                color: #878787;
+                font-size: 14px;
+                line-height: 20px;
+                max-height: 40px;
+                -webkit-line-clamp: 2;
+                font-weight: 400;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+
+                &:hover, &:active, &:focus {
+                    color: $primary-color;
+                }
+
+                @include respond-to(mobile) { 
+                    font-size: 13px;
+                    line-height: 15px;
+
+                    max-height: 45px;
+                    -webkit-line-clamp: 3;
+                }
+            }
+        }
+
+        .comic__item__body__price {
+            width: 100%;
+
+            .comic__item__body__price__old {
+                color: #878787;
+                font-size: 11px;
+
+                width: 100%;
+                float: left;
+            }
+
+            .comic__item__body__price__current {
+                color: #a9cc00;
+
+                font-size: 23px;
+                line-height: 23px;
+
+                text-transform: uppercase;
+                font-family: 'Open Sans Bold';
+                text-align: left;
+
+                width: 100%;
+                float: left;
+
+                @include respond-to(iphone5){
+                    font-size: 18px;
+                }
+            }
+        }
+
+        .comic__item__body__actions {
+            width: 100%;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            margin-top: 10px;
+
+            @include respond-to(mobile) {
+                display: none;
+            }
+
+            > a {
+                color: $secondary-color;
+                font-weight: 500;
+
+                &:hover {
+                    color: darken($secondary-color, 5%);
+                }
+            }
+
+            .comic__item__body__actions__rate {
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+
+                span {
+                    width: 25px;
+                    height: 25px;
+
+                    font-size: 13px;
+
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    
+                    border-radius: 50%;
+
+                    background-color: $primary-color;
+                    color: #ffffff;
+
+                    &:nth-child(2) {
+                        margin-left: 5px;
+                    }
+
+                    &:hover { 
+                        background-color: $secondary-color;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }   
+
+        .comic__item__body__rating {            
+            .ant-rate {
+                color: $secondary-color;
+
+                @include respond-to(mobile) {
+                    font-size: 12px;
+                }
+
+                .ant-rate-star {
+                    font-size: 15px;
+                    margin-right: 5px;
+
+                    @include respond-to(small-phone){
+                        font-size: 13px;
+                        margin-right: 2px;
+                    }
+
+                    @include respond-to(mobile) {
+                        font-size: 12px;
+                    }
+                }
+            }
+
+            @include respond-to(mobile) { 
+                margin-bottom: -5px;
+            }
+        }
+    }
+
+    &.loading {
+        .comic__item__body {
+            .comic__item__body__thumb {
+                height: 130px;
+                @extend %card-loading;
+            }
+
+            .comic__item__body__shop {
+                @extend %card-loading;
+                height: 40px;
+            }
+
+            .comic__item__body__rating {
+                @extend %card-loading;
+                height: 15px;
+                width: 45%;
+            }
+
+            .comic__item__body__title {
+                @extend %card-loading;
+                width: 100%;
+                height: 15px;
+                position: relative;
+                float: left;
+                
+                &:after {
+                    content: '';
+                    @extend %card-loading;
+                    width: 70%;
+                    height: 15px;
+                    position: absolute;
+                    top: 20px;                
+                }
+            }
+
+            .comic__item__body__price {
+                @extend %card-loading;
+                width: 30%;
+                height: 15px;
+                margin-top: 30px;
+
+                position: relative;
+                float: left;
+                &:after {
+                    content: '';
+                    @extend %card-loading;
+                    width: 150%;
+                    height: 20px;
+                    position: absolute;
+                    top: 20px;
+                }
+            }
+
+            .comic__item__body__actions {
+                span {
+                    @extend %card-loading;
+                    width: 40%;
+                    height: 15px;
+                    margin-top: 20px;
+                }
+                
+                .comic__item__body__actions__rate {
+                    span {
+                        @extend %card-loading;
+                        width: 25px;
+                        height: 25px;
+                    }
+                }
+            }
+        }
+    }
+}

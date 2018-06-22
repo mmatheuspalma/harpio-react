@@ -1,0 +1,112 @@
+.not__found {
+    width: 100%;
+    height: 56.3vh;
+
+    padding: 70px 0px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include respond-to(mobile){
+        padding: 10px 0px;
+
+        flex-direction: column;
+        height: auto;
+
+        justify-content: center;
+    }
+
+    .not__found__info {
+        min-width: 500px;
+
+        @include respond-to(mobile){
+            min-width: 100%;
+
+            padding: 0px 10px;
+        }
+
+        h1 {
+            font-size: 140px;
+            font-weight: 800;
+            color: $primary-color;
+            margin-bottom: 0px;
+            margin-left: -12px;
+
+            @include respond-to(mobile){
+                font-size: 60px;
+                word-break: break-all;
+                padding-left: 10px;
+            }
+        }
+
+        p {
+            font-size: 20px;
+            line-height: 20px;
+            font-weight: 300;
+            color: #666;
+
+            @include respond-to(mobile){
+                font-size: 20px;
+                word-break: break-all;
+                text-align: left;
+                line-height: 23px;
+            }
+
+            b {
+                font-weight: 600;
+                color: $secondary-color;
+                line-height: 30px;
+                border-bottom: 2px dashed $secondary-color;
+                padding-bottom: 2px;
+
+                &:hover {
+                    color: lighten($secondary-color, 2%);
+                    border-color: lighten($secondary-color, 2%);
+                }
+            }
+        }
+
+        a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 10px 30px;
+
+            color: #fff;
+            background-color: $secondary-color;
+
+            border-radius: 3px;
+            border-bottom: 3px solid darken($secondary-color, 5%);
+
+            margin-right: 15px;
+            margin-top: 30px;
+
+            float: left;
+
+            transition: all 0.2s;
+
+            @include respond-to(mobile){
+                width: 100%;
+                margin:0;
+            }
+
+            &:hover {
+                background-color: darken($secondary-color, 5%);
+                border-color: darken($secondary-color, 10%);
+                transition: all 0.2s;
+            }
+        }
+    }
+
+    .not__found__thumb {
+        img {
+            transform: scaleX(-1);
+
+            @include respond-to(mobile){
+                max-width: 100%;
+            }
+        }
+    }
+}
